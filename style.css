@@ -1,52 +1,56 @@
 :root {
-    --headerFg: rgb(255, 255, 255);
-    --headerBg: #D3EFBD;
+    --header: rgb(255, 255, 255);
     --headerElement: #9CACBB;
     --headerMomentanElement: #A0C9CF;
     --bodyBg: #ffffff;
     --imageBg: #5C6479;
-    --DivTitle: #4DA5B1;
+    /*Ich habe die Farbe im DivTitle angepasst, da die Farbe so besser zur Webseite passt*/ 
+    --DivTitle: #93adca;
     --FooterBg: #304771;
+}
+
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: var(--bodyBg);
 }
 
 .flex {
     display: flex;
 }
 
-body {
-    margin: 0;
-    background-color: var(--bodyBg);
-}
-
 img {
     opacity: 0.5;
 }
 
-img[data-high-res] {
-    opacity: 1;
-}
-
 .header {
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     width: 100vw;
     background-color: var(--headerElement);
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 3fr;
 }
 
-.headerItem {
+.header-It {
     display: flex;
     justify-content: center;
     align-items: center;
 
     margin-right: 50px;
     width: 150px;
-    height: 80px;
+    height: 100%;
 
-    color: var(--headerFg);
+    color: var(--header);
     font-size: 20px;
     background-color: var(--headerElement);
-    border-radius: 5px;
+    border-radius: 0.35rem;
     text-decoration: none;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
 }
 
 .headerCurrentItem {
@@ -55,15 +59,14 @@ img[data-high-res] {
     align-items: center;
 
     margin-right: 50px;
-    margin-top: 20px;
     width: 150px;
-    height: 40px;
+    height: 100%;
 
-    color: var(--headerFg);
+    color: var(--header);
     font-size: 20px;
-    background-color: var(--headerMomentanElement);
-    border-radius: 5px;
-    text-decoration: none;
+    background-color: var(--headerElement);
+    border-radius: 0.35rem;
+    text-decoration: underline;
 }
 
 .mostLeftItem {
@@ -80,6 +83,7 @@ img[data-high-res] {
 .imgContainer2 {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .divImg1,
@@ -87,7 +91,7 @@ img[data-high-res] {
     display: flex;
     justify-content: center;
     background-color: var(--imageBg);
-    border-radius: 2.5vw;
+    border-radius: 1rem;
     margin-right: 2.5vw;
     margin-left: 2.5vw;
 }
@@ -96,7 +100,7 @@ img[data-high-res] {
     display: flex;
     justify-content: center;
     background-color: var(--imageBg);
-    border-radius: 2.5vw;
+    border-radius: 1.5rem;
 }
 
 .img1,
@@ -108,7 +112,7 @@ img[data-high-res] {
 }
 
 .img3 {
-    width: 82vw;
+    width: 80vw;
     height: auto;
     margin: 3vw;
     border-radius: 10px;
@@ -123,7 +127,7 @@ img[data-high-res] {
     display: flex;
     justify-content: center;
     background-color: var(--imageBg);
-    border-radius: 30px;
+    border-radius: 1.5rem;
     margin-top: 5vh;
     margin-right: 6vw;
     margin-left: 6vw;
@@ -146,10 +150,10 @@ img[data-high-res] {
     align-items: center;
 
     margin-top: 5vh;
-    margin-right: 6vw;
+    margin-left: 6vw;
 
     background-color: var(--DivTitle);
-    border-radius: 30px;
+    border-radius: 1rem;
 }
 
 .aboutTitle {
@@ -161,8 +165,8 @@ img[data-high-res] {
     display: flex;
 
     margin-top: 5vh;
-    margin-right: 2vw;
-    border-radius: 30px;
+    margin-left: 4vw;
+    border-radius: 1.5rem;
 }
 
 .aboutText {
@@ -178,7 +182,7 @@ img[data-high-res] {
     display: flex;
     justify-content: center;
     background-color: var(--imageBg);
-    border-radius: 30px;
+    border-radius: 1.5rem;
     margin-top: 5vh;
     margin-right: 6vw;
     margin-left: 6vw;
@@ -201,10 +205,10 @@ img[data-high-res] {
     align-items: center;
 
     margin-top: 5vh;
-    margin-right: 6vw;
+    margin-left: 6vw;
 
     background-color: var(--DivTitle);
-    border-radius: 30px;
+    border-radius: 1.5rem;
 }
 
 .hobbyTitle {
@@ -216,8 +220,8 @@ img[data-high-res] {
     display: flex;
 
     margin-top: 5vh;
-    margin-right: 5vw;
-    border-radius: 30px;
+    margin-left: 5vw;
+    border-radius: 1.5rem;
 }
 
 .hobbyText {
@@ -289,15 +293,7 @@ img[data-high-res] {
     font-weight: bold;
 }
 
-.contactTextContainer {
-    display: flex;
-    justify-content: center;
-    margin-left: 6vw;
-    margin-right: 6vw;
-    margin-top: 3vw;
-}
-
-.contactFormular {
+.Formular {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -305,15 +301,16 @@ img[data-high-res] {
     border-radius: 15px;
     margin-top: 5vh;
     margin-right: 6vw;
-    margin-left: 6vw;
+    margin-left: 9vw;
 
     background-color: var(--imageBg);
 
-    width: 88vw;
+    width: 80vw;
+    height: 38vw;
     gap: 1rem;
 }
 
-.contactFormularForm {
+.FormularForm {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -339,6 +336,8 @@ img[data-high-res] {
 .submit {
     height: 50px;
     width: 150px;
+    margin-bottom: 10px;
+    border-radius: 1rem;
 }
 
 .footer {
@@ -346,22 +345,14 @@ img[data-high-res] {
     justify-content: center;
     align-items: center;
 
+    margin-top: 2rem;
+
+    width: 100%;
+
     height: 15vh;
 
-    border-radius: 15px;
-    margin-top: 4vh;
-    margin-bottom: 40px;
-    margin-right: 6vw;
-    margin-left: 6vw;
-
     background-color: var(--FooterBg);
-    /*Die Hintergrundfarbe habe ich hier auch geändert, da dass hellgrün nicht zum bg der main-page gepasst hat*/
     color: white;
-    /*Die Schriftfarbe Weiss ist auf dem Dunkelgrün schöner wie das Schwarz*/
-}
-
-.footerTitel {
-    font-size: 3vw;
 }
 
 @media (max-width: 1000px) {
@@ -370,7 +361,7 @@ img[data-high-res] {
         justify-content: space-between;
     }
 
-    .headerItem {
+    .header-It {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -379,7 +370,7 @@ img[data-high-res] {
         width: 100px;
         height: 60px;
 
-        color: var(--headerFg);
+        color: var(--header);
         font-size: 2vw;
         background-color: var(--headerElement);
         border-radius: 5px;
@@ -396,11 +387,11 @@ img[data-high-res] {
         width: 100px;
         height: 40px;
 
-        color: var(--headerFg);
+        color: var(--header);
         font-size: 2vw;
-        background-color: var(--headerMomentanElement);
+        background-color: var(--headerElement);
         border-radius: 5px;
-        text-decoration: none;
+        text-decoration: underline;
     }
 
     .imgContainer {
@@ -416,7 +407,7 @@ img[data-high-res] {
         display: flex;
         justify-content: center;
         background-color: var(--imageBg);
-        border-radius: 2.5vw;
+        border-radius: 1rem;
         margin-bottom: 5vw;
         margin-right: 2.5vw;
         margin-left: 2.5vw;
@@ -427,7 +418,7 @@ img[data-high-res] {
         display: flex;
         justify-content: center;
         background-color: var(--imageBg);
-        border-radius: 2.5vw;
+        border-radius: 1rem;
         margin-right: 2.5vw;
         margin-left: 2.5vw;
     }
@@ -453,7 +444,7 @@ img[data-high-res] {
         margin-top: 3vh;
         margin-right: 6vw;
         margin-left: 6vw;
-        border-radius: 30px;
+        border-radius: 1.5rem;
 
         width: 88vw;
         background-color: var(--imageBg);
@@ -479,7 +470,7 @@ img[data-high-res] {
 
         margin-right: 6vw;
         margin-left: 6vw;
-        border-radius: 30px;
+        border-radius: 1.5rem;
 
         width: 88vw;
         height: 15vh;
@@ -495,7 +486,7 @@ img[data-high-res] {
 
         margin-right: 6vw;
         margin-left: 6vw;
-        border-radius: 30px;
+        border-radius: 1.5rem;
 
         width: 88vw;
     }
@@ -518,7 +509,7 @@ img[data-high-res] {
         margin-top: 3vh;
         margin-right: 6vw;
         margin-left: 6vw;
-        border-radius: 30px;
+        border-radius: 1.5rem;
 
         width: 88vw;
         background-color: var(--imageBg);
@@ -544,7 +535,7 @@ img[data-high-res] {
 
         margin-right: 6vw;
         margin-left: 6vw;
-        border-radius: 30px;
+        border-radius: 1.5rem;
 
         width: 88vw;
         height: 15vh;
@@ -558,7 +549,7 @@ img[data-high-res] {
     .hobbyDivText {
         margin-right: 6vw;
         margin-left: 6vw;
-        border-radius: 30px;
+        border-radius: 1.5rem;
 
         width: 88vw;
     }
@@ -627,13 +618,27 @@ img[data-high-res] {
     .nameFormular,
     .emailFormular {
         height: 5vw;
-        width: 80vw;
+        width: 60vw;
         text-align: center;
     }
 
     .messageFormular {
         height: 15vw;
-        width: 80vw;
+        width: 60vw;
         text-align: center;
+    }
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        margin-top: 2rem;
+    
+        width: 100%;
+    
+        height: 15vh;
+    
+        background-color: var(--FooterBg);
+        color: white;
     }
 }
